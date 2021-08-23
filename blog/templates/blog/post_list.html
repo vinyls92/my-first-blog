@@ -8,20 +8,32 @@
 <!--        <p>It works!</p>-->
 <!--        -->
 <!--        2-->
+<!--        <div>-->
+<!--            <h1><a href="">My django test blog</a></h1>-->
+<!--        </div>-->
+
+<!--        <div>-->
+<!--            <p>published: 22.08.2021, 16:10</p>-->
+<!--            <h2><a href="">Post 1</a></h2>-->
+<!--            <p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>-->
+<!--        </div>-->
+
+<!--        <div>-->
+<!--            <p>published: 23.08.2021, 14:34</p>-->
+<!--            <h2><a href="">Post 2</a></h2>-->
+<!--            <p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut f.</p>-->
+<!--        </div>-->
+<!--        3-->
         <div>
             <h1><a href="">My django test blog</a></h1>
         </div>
 
-        <div>
-            <p>published: 22.08.2021, 16:10</p>
-            <h2><a href="">Post 1</a></h2>
-            <p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-        </div>
-
-        <div>
-            <p>published: 23.08.2021, 14:34</p>
-            <h2><a href="">Post 2</a></h2>
-            <p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut f.</p>
-        </div>
+        {% for post in posts %}
+            <div>
+                <p>published: {{ post.published_date }}</p>
+                <h1><a href="">{{ post.title }}</a></h1>
+                <p>{{ post.text|linebreaksbr }}</p>
+            </div>
+        {% endfor %}
     </body>
 </html>
