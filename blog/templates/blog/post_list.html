@@ -25,14 +25,14 @@
 <!--        </div>-->
 <!--        3-->
         <div>
-            <h1><a href="">My django test blog</a></h1>
+            <h1><a href="">My django test blog</a></h1><br><br>
         </div>
 
         {% for post in posts %}
             <div>
-                <p>published: {{ post.published_date }}</p>
-                <h1><a href="">{{ post.title }}</a></h1>
-                <p>{{ post.text|linebreaksbr }}</p>
+                <h2><a href="">{{ post.title }}</a></h2>
+                <p><b>published: {{ post.published_date }}</b></p>
+                <p>{{ post.text|linebreaksbr }}</p><br>
             </div>
         {% endfor %}
     </body>
